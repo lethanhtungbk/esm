@@ -1,0 +1,45 @@
+<div class="form-group" ng-init="init()">
+    <label class="col-md-3 control-label">{{label}}</label>
+    <div class="col-md-4" >
+        <div class="row" ng-if="type == 'image'">
+            <div class="col-md-12">
+                <div class="fileinput">
+                    <div class="thumbnail" style="width: 200px; height: 150px;">
+                        <img ng-src="{{link}}" alt=""/>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div ng-if="type == 'audio'">
+            <audio controls>
+                <source src="http://localhost/ems1/public/files/Kalimba.mp3" type="audio/mp3">
+            </audio>           
+        </div>
+
+        <div class="row" ng-if="type == 'video'">
+            <div class="col-md-12">
+                <video width="320" height="240" controls>
+                    <source src="http://localhost/ems1/public/files/small.mp4" type="video/mp4">
+                </video>
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <a href="{{link}}" class="btn blue" download ng-if="type == 'attachment' && link != ''"><i class="fa fa-download"></i> Download</a>
+                    <span class="btn blue btn-file">
+                        <span class="fileinput-button"><i class="fa fa-upload"></i> Upload</span>
+                        <input type="file" fileupload callback="callbackHandler(e,data)" file-type="{{type}}"/>  
+                    </span>
+                    <a href="#" class="btn red fileinput-button" ng-click="remove()">Remove </a>
+                </div>
+            </div>    
+        </div>
+
+        <div class="row">            
+            <div class="col-md-12" ng-if="message.info != undefined && message.info != ''">
+                <div class="alert {{message.class}} alert-success alert-dismissable" style="margin-top: 5px;margin-bottom: 5px">{{message.info}}</div>
+            </div>    
+        </div>
+    </div>
+</div>

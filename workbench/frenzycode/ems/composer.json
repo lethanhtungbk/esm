@@ -1,0 +1,28 @@
+{
+    "name": "frenzycode/ems",
+    "description": "",
+    "authors": [
+        {
+            "name": "Le Thanh Tung",
+            "email": "lethanhtungbk@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/controllers",
+            "src/models",
+            "src/viewmodels",
+            "src/libraries",
+            "src/migrations",
+            "src/config"
+        ],
+        "psr-0": {
+            "Frenzycode\\Ems\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
