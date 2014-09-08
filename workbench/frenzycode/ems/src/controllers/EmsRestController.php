@@ -123,7 +123,6 @@ class EmsRestController extends \Controller{
         $data = json_decode(InputHelper::getInput('data', $input));
         $action = InputHelper::getInput('action', $input);
         $group = FrenzyHelper::cast('Frenzycode\Ems\Models\Group', $data);
-        Illuminate\Support\Facades\Log::error($group->fields);
 
         if ($action == 'update-fields') {
             $group->saveFields();

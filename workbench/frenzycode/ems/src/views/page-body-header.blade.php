@@ -2,13 +2,8 @@
     <!-- BEGIN HEADER INNER -->
     <div class="page-header-inner">
         <!-- BEGIN LOGO -->
-        <div class="page-logo">
-            <a href="{{URL::to('/')}}">
-                <!-- img src="{{URL::asset('images/ems.png')}}" alt="logo" class="logo-default"/-->
-            </a>
-            <div class="menu-toggler sidebar-toggler hide">
-                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
-            </div>
+        <div style="float:left;display: block;height: 46px;padding-left: 20px;margin-top: 8px">
+            <a href="{{URL::to('/')}}" style="font-size:18px;font-weight: bold" >{{strtoupper($pageData->head->title)}}</a>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
@@ -21,7 +16,7 @@
                 <li class="dropdown dropdown-user">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <img alt="" class="img-circle" src="{{URL::to('assets/admin/layout/img/avatar3_small.jpg')}}"/>
-                        <span class="username">Bob </span>
+                        <span class="username">{{Auth::user()->name}} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">

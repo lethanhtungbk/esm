@@ -78,7 +78,7 @@ class PageModel {
         $this->pageData = new PageData();
         $this->pageType = $pageType;
 
-        $this->pageData->head->title = "EMS | Entity management system";
+        $this->pageData->head->title = "US Universities Management System";
 
         $this->addStyle();
         $this->addScript();

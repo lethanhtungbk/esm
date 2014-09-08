@@ -70,7 +70,7 @@ class Group {
                         ->select('group_fields.group_id', 'fields.id', 'fields.name')->get();
         $groupFields = array();
         foreach ($fieldsdb as $fielddb) {
-            array_push($groupFields, FrenzyHelper::cast('Frenzycode\Models\Field', $fielddb));
+            array_push($groupFields, FrenzyHelper::cast('Frenzycode\Ems\Models\Field', $fielddb));
         }
         $this->fields = $groupFields;
     }
@@ -87,7 +87,7 @@ class Group {
         $freeFielddbs = DB::table('fields')->whereNotIn('id', $idArr)->select('id', 'name')->get();
         $freeFields = array();
         foreach ($freeFielddbs as $field) {
-            array_push($freeFields, FrenzyHelper::cast('Frenzycode\Models\Field', $field));
+            array_push($freeFields, FrenzyHelper::cast('Frenzycode\Ems\Models\Field', $field));
         }
         return $freeFields;
     }
