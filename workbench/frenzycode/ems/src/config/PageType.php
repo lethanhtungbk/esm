@@ -12,9 +12,9 @@ class PageType {
     const PAGE_ENTITY_ADD   = 9;
     const PAGE_ENTITY_EDIT  = 10;
     const PAGE_LOGIN        = 11;
-    
+    const PAGE_ADMIN        = 12;
     
     public static function isValidPage($pageType) {
-        return ($pageType >= self::PAGE_FIELDS && $pageType <= self::PAGE_LOGIN);
+        return ($pageType >= self::PAGE_FIELDS && $pageType <= self::PAGE_ADMIN);
     }
 }

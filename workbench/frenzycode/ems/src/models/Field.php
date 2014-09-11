@@ -17,7 +17,6 @@ class Field {
     public $defineValues;
     
     function __construct() {
-        $this->defineValues = array(array("id" => "-1", "value" => "", "ordering" => 0));
     }
     
     public function getFieldTypes() {
@@ -31,19 +30,12 @@ class Field {
         );
     }
 
-    public function getObjects() {
-        return array(
-            array("id" => 1, "name" => "Object 1"),
-            array("id" => 2, "name" => "Object 2"),
-            array("id" => 3, "name" => "Object 3"),
-            array("id" => 4, "name" => "Object 4"),
-        );
-    }
-
     public static function getFields() {
         return DB::table('fields')
                         ->join('field_types', 'fields.field_type_id', '=', 'field_types.id')
-                        ->select("fields.id", "fields.name", "field_types.name as field_type")->get();
+                        ->select("fields.id", "fields.name", "field_types.name as field_type")
+                        ->orderBy("fields.id","DESC")
+                        ->get();
     }
     
     public static function getField($id) {
@@ -52,7 +44,7 @@ class Field {
                         ->select('id', 'name', 'field_type_id', 'value_type', 'object_id', 'attribute_id')->first();
         if ($fielddb != null) {
             $field = FrenzyHelper::cast('Frenzycode\Ems\Models\Field', $fielddb);
-
+            
             $defineValues = DB::table('field_define_values')->where('field_id', '=', $id)
                             ->select('id', 'value', 'ordering')->get();
 

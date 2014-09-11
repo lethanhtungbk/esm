@@ -8,7 +8,14 @@ use Request;
 use Frenzycode\Ems\ViewModels\General\MenuItem;
 use Frenzycode\Ems\Config\MenuConfig;
 class FrenzyHelper {
-
+    public static function xmlToJson($fileContents)
+    {
+        $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
+        $fileContents = trim(str_replace('"', "'", $fileContents));
+        $simpleXml = simplexml_load_string($fileContents);
+        $json = json_decode(json_encode($simpleXml));
+        return $json;
+    }
     public static function arrayToObject($array, $class) {
         $object = new $class;
         foreach ($array as $key => $value) {

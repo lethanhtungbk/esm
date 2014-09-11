@@ -5,7 +5,7 @@ namespace Frenzycode\Ems\Controllers;
 /* ---------------------------- */
 use Input;
 use Response;
-
+use URL;
 
 /* ---------------------------- */
 /*        LOCAL USE             */
@@ -44,14 +44,12 @@ class EmsRestController extends \Controller{
             $data = new \stdClass();
             $data->success = new \stdClass();
             $data->success->message = "Field added successfully.";
-            $data->success->url = URL::to("/fields");
             return Response::json($data);
         } else if ($action == 'update') {
             $field->update();
             $data = new \stdClass();
             $data->success = new \stdClass();
             $data->success->message = "Field updated successfully.";
-            $data->success->url = URL::to("/fields");
             return Response::json($data);
         } else {
             //unknow action

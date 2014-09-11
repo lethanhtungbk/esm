@@ -25,12 +25,16 @@ class URLMapping {
         //login
         array("url" => "login", "handle" => "UserController@showLogin"),
         array("url" => "logout", "handle" => "UserController@doLogout"),
+        
+        //admin
+        array("url" => "admin", "handle" => "AdminController@index"),
+        array("url" => "admin/import", "handle" => "AdminController@import"),
     );
     public static $httpPost = array(
         //fields
         array("url" => "restapi/fields", "handle" => "EmsRestController@getFields", "type" => "post"),
         array("url" => "restapi/field", "handle" => "EmsRestController@getField", "type" => "post"),
-        array("url" => "restapi/field/save", "handle" => "EmsRestController@fieldSave", "type" => "post"),
+        array("url" => "restapi/field/save", "handle" => "EmsRestController@saveField", "type" => "post"),
         //groups
         array("url" => "restapi/groups", "handle" => "EmsRestController@getGroups", "type" => "post"),
         array("url" => "restapi/group", "handle" => "EmsRestController@getGroup", "type" => "post"),

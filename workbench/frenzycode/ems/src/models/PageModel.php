@@ -15,10 +15,15 @@ class PageModel {
     private $pageType;
 
     private function createMenu() {
-        FrenzyHelper::addMenuItem($this->pageData->body, MenuConfig::$menuData, FrenzyHelper::getActivePath());
+        $activePath = FrenzyHelper::getActivePath();
+        FrenzyHelper::addMenuItem($this->pageData->body, MenuConfig::$menuData, $activePath);
         $groups = Group::getGroups();
         foreach ($groups as $group) {
-            $this->pageData->body->addMenuItem(new MenuItem(array('title' => $group->name, 'link' => 'entities/' . $group->link, 'icon' => $group->icon)));
+            $menuItem = $this->pageData->body->addMenuItem(new MenuItem(array('title' => $group->name, 'link' => 'entities/' . $group->link, 'icon' => $group->icon)));
+            if ($menuItem->link == $activePath)
+            {
+                $menuItem->setActive(true);
+            }
         }
     }
 
@@ -89,11 +94,16 @@ class PageModel {
         }
 
         $this->pageData->bodyTemplate = 'frenzycode::page-body-content';
-
+        
+        
         $this->createMenu();
+        
         $this->createBreadcrumbs();
         $this->createBodyTemplate($data);
-        $this->addAngularJS();
+        if ($pageType != \Frenzycode\Ems\Config\PageType::PAGE_ADMIN)
+        {
+            $this->addAngularJS();
+        }
 
         return $this->pageData;
     }

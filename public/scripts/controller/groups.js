@@ -80,6 +80,12 @@ emsApp.controller("GroupController", function($scope, groupService)
     };
 
     $scope.onAssignField = function() {
+        if ($scope.field == undefined || $scope.field.length == 0)
+        {
+            alert("Please select field to assign.");
+            return;
+        }
+        
         for (i = 0; i < $scope.field.length; i++)
         {
             $scope.group.fields.push($scope.field[i]);
@@ -91,5 +97,16 @@ emsApp.controller("GroupController", function($scope, groupService)
     $scope.onUnAssignField = function($index) {
         $scope.fields.push($scope.group.fields[$index]);
         $scope.group.fields.splice($index, 1);
+    };
+    
+    $scope.fieldCreated = function() 
+    {
+         $('#full').modal('toggle');
+        $scope.getGroupFields();
+    };
+    
+    $scope.cancel = function()
+    {
+        $('#full').modal('toggle');
     };
 });

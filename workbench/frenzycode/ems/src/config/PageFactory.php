@@ -16,6 +16,7 @@ class PageFactory {
         PageType::PAGE_ENTITIES => 'template.entities',
         PageType::PAGE_ENTITY_ADD => 'template.entity-detail',
         PageType::PAGE_ENTITY_EDIT => 'template.entity-detail',
+        PageType::PAGE_ADMIN => 'template.admin',
     );
 
     /* -- Angular Scripts -- */
@@ -28,19 +29,30 @@ class PageFactory {
     public static $angularScripts = array(
         PageType::PAGE_FIELDS => array(
             'scripts/service/field-service.js',
-            'scripts/controller/fields.js'
+            'scripts/controller/field-table.js'
         ),
         PageType::PAGE_FIELD_ADD => array(
             'scripts/service/field-service.js',
-            'scripts/controller/fields.js'
+            'scripts/controller/fields.js',
+            
+            
+            'scripts/service/group-service.js',
+            'scripts/controller/field-form.js',
+            'scripts/directive/field-form.js',
         ),
         PageType::PAGE_FIELD_EDIT => array(
             'scripts/service/field-service.js',
-            'scripts/controller/fields.js'
+            'scripts/controller/fields.js',
+            
+            'scripts/service/group-service.js',
+            'scripts/controller/field-form.js',
+            'scripts/directive/field-form.js',
+            
         ),
         PageType::PAGE_GROUPS => array(
             'scripts/service/group-service.js',
-            'scripts/controller/groups.js'
+            'scripts/controller/groups.js',
+            
         ),
         PageType::PAGE_GROUP_ADD => array(
             'scripts/service/group-service.js',
@@ -52,7 +64,10 @@ class PageFactory {
         ),
         PageType::PAGE_GROUP_ASSIGN => array(
             'scripts/service/group-service.js',
-            'scripts/controller/groups.js'
+            'scripts/service/field-service.js',
+            'scripts/controller/groups.js',
+            'scripts/controller/field-form.js',
+            'scripts/directive/field-form.js',
         ),
         PageType::PAGE_ENTITIES => array(
             'scripts/service/entity-service.js',

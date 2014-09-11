@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<config>
+	<data>
+		<group>
+			<name>University</name>
+			<link>university</link>
+			<fields>
+				<field>
+					<name>State</name>
+					<displayType>Dropdown</displayType>
+					<value_type>1</value_type>
+					<defineValues>
+						<defineValue>
+							<value>AL | Alabama</value>
+						</defineValue>
+						<defineValue>
+						<value>AK | Alaska</value></defineValue>
+						<defineValue><value>AZ | Arizona</value></defineValue>
+						<defineValue><value>AR | ArKansas</value></defineValue>
+					</defineValues>
+				</field>
+				<field>
+					<name>Rank</name>
+					<displayType>Textfield</displayType>					
+				</field>
+				<field>
+					<name>University type</name>
+					<displayType>Dropdown</displayType>
+					<value_type>1</value_type>
+					<defineValues>
+						<defineValue><value>Public</value></defineValue>
+						<defineValue><value>Private</value></defineValue>						
+					</defineValues>
+				</field>
+				<field>
+					<name>Major</name>
+					<displayType>List</displayType>
+					<value_type>1</value_type>
+					<defineValues>
+						<defineValue><value>Accounting</value></defineValue>
+						<defineValue><value>Addiction and Addictive Behavior</value></defineValue>						
+						<defineValue><value>African American and African Diaspora Studies</value></defineValue>
+						<defineValue><value>Anthropology</value></defineValue>
+						<defineValue><value>Applied Physics</value></defineValue>						
+						<defineValue><value>Applied Statistics</value></defineValue>						
+						<defineValue><value>Art History</value></defineValue>
+						<defineValue><value>Arts Management</value></defineValue>						
+						<defineValue><value>Audio Production</value></defineValue>
+						<defineValue><value>Audio Technology</value></defineValue>
+						<defineValue><value>Behavior, Cognition, and Neuroscience</value></defineValue>						
+						<defineValue><value>Bilingual Education</value></defineValue>						
+					</defineValues>
+				</field>
+				
+				<field>
+					<name>Quality</name>
+					<displayType>Dropdown</displayType>
+					<value_type>1</value_type>
+					<defineValues>
+						<defineValue><value>Smaller than 500</value></defineValue>
+						<defineValue><value>From 500 to 3000</value></defineValue>						
+						<defineValue><value>Bigger than 3000</value></defineValue>												
+					</defineValues>
+				</field>				
+			</fields>
+		</group>
+	</data>
+</config>

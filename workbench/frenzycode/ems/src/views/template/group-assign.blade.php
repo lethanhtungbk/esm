@@ -1,10 +1,10 @@
-<div class="portlet box blue" ng-app="emsApp">
+<div class="portlet box blue" ng-controller="GroupController" >
     <div class="portlet-title">
         <div class="caption">
             Group Assign                    
         </div>        
     </div>
-    <div class="portlet-body form" ng-controller="GroupController" ng-init="getGroupFields()">
+    <div class="portlet-body form" ng-init="getGroupFields()">
         <form action="#" class="form-horizontal">
             <div class="form-body">
                 <div class="form-group">
@@ -16,13 +16,20 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label">Fields</label>
                     <div class="col-md-4">
-                        <select class="form-control"  
-                                ng-model="field" 
-                                ng-options="field.name for field in fields" multiple></select>
-                    </div>
-                    <div class="col-md-1">
-                        <a ng-click="onAssignField()" class="btn blue"><i class="fa fa-chain"></i>  Assign</a>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <select class="form-control"  
+                                        ng-model="field" 
+                                        ng-options="field.name for field in fields" multiple></select>
+                            </div>
+                            <div class="col-md-12" style="margin-top: 8px">
+                                <div class="btn-group tabletools-btn-group pull-right">
+                                   <a href="#full" data-toggle="modal" class="btn green"><i class="fa fa-plus"></i>  Add Field</a>
+                                   <a ng-click="onAssignField()" class="btn blue"><i class="fa fa-chain"></i>  Assign</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
                 </div>                        
                 <div class="form-group">
                     <label class="col-md-3 control-label">Group fields</label>
@@ -42,7 +49,7 @@
                                     <td>
                                         <div class="btn-group pull-right">
                                             <a class="btn blue"><i class="fa fa-share-alt"></i></a>
-                                            <a ng-click="onUnAssignField($index)"  class="btn red-flamingo"><i class="fa fa-chain-broken"></i></a>
+                                            <a class="btn red-flamingo" ng-click="onUnAssignField($index)"><i class="fa fa-chain-broken"></i></a>
                                         </div>        
                                     </td>                    
                                 </tr>                                                          
@@ -59,6 +66,13 @@
                     <a class="btn default" href="{{URL::to('setting/groups')}}">Cancel</a> 
                 </div>
             </div>
-        </form>
+        </form>        
+    </div>
+    <div class="modal fade bs-modal-lg" id="full" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div ems-field-form action="add" success="fieldCreated()" cancel="cancel();"></div>
+            </div>
+        </div>
     </div>
 </div>

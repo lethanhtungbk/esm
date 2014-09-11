@@ -1,10 +1,10 @@
-<div class="portlet box blue" ng-app="emsApp">
+<div class="portlet box blue" >
     <div class="portlet-title">
         <div class="caption">
             Fields                      
         </div>        
     </div>
-    <div class="portlet-body" ng-controller="FieldController" ng-init="getFields()">
+    <div class="portlet-body" ng-controller="FieldTableController" ng-init="getFields()">
         <div class="row">
             <div class="col-md-12">                
                 <div class="btn-group tabletools-btn-group pull-left">
