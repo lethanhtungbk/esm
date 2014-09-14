@@ -31,9 +31,9 @@ class AdminController extends BaseController {
         DB::table('entity_multi_values')->delete();
     }
 
-    public function import() {
+    public function import($file) {
         $this->defaultDb();
-        $fileContents = file_get_contents('data-template/config.xml');
+        $fileContents = file_get_contents('data-template/'.$file);
         $json = FrenzyHelper::xmlToJson($fileContents);
         $groups = $json->data->group;
         if (is_array($groups)) {

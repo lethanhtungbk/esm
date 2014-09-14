@@ -28,7 +28,7 @@ class URLMapping {
         
         //admin
         array("url" => "admin", "handle" => "AdminController@index"),
-        array("url" => "admin/import", "handle" => "AdminController@import"),
+        array("url" => "admin/import/{file}", "handle" => "AdminController@import"),
     );
     public static $httpPost = array(
         //fields

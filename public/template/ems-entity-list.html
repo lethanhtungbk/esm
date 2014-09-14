@@ -65,7 +65,7 @@
                     </td>                    
                 </tr>                                   
                 <tr ng-repeat="entity in entities|filter:{name:searchEntity}">
-                    <td><a ng-href="{{edit}}/{{entity.id}}" >@{{entity.name}}</a></td>
+                    <td><a ng-href="{{edit}}/{{entity.id}}" >{{entity.name}}</a></td>
                     <td>
                         <div class="btn-group tabletools-btn-group pull-right">
                             <a ng-href="{{edit}}/{{entity.id}}" class="btn blue"><i class="fa fa-edit"></i></a>

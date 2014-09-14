@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<config>
+    <data>
+        <group>
+            <name>Default</name>
+            <link>default</link>
+            <fields>
+                <field>
+                    <name>Textfield</name>
+                    <displayType>Textfield</displayType>                    
+                </field>
+                <field>
+                    <name>Textarea</name>
+                    <displayType>Textarea</displayType>                    
+                </field>
+                <field>
+                    <name>Image</name>
+                    <displayType>image</displayType>                    
+                </field>
+                <field>
+                    <name>Audio</name>
+                    <displayType>audio</displayType>                    
+                </field>
+                <field>
+                    <name>Video</name>
+                    <displayType>video</displayType>                    
+                </field>
+                <field>
+                    <name>File Attachment</name>
+                    <displayType>attachment</displayType>                    
+                </field>
+                <field>
+                    <name>Dropdown</name>
+                    <displayType>drowpdown</displayType>   
+                    <value_type>1</value_type>
+                    <defineValues>
+                        <defineValue>
+                            <value>Dropdown 1</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>Dropdown 2</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>Dropdown 3</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>Dropdown 4</value>
+                        </defineValue>
+                    </defineValues>                 
+                </field>
+                <field>
+                    <name>Radio</name>
+                    <displayType>radio</displayType>  
+                    <value_type>1</value_type>
+                    <defineValues>
+                        <defineValue>
+                            <value>Radio 1</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>Radio 2</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>Radio 3</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>Radio 4</value>
+                        </defineValue>
+                    </defineValues>                          
+                </field>
+                <field>
+                    <name>List</name>
+                    <displayType>list</displayType>    
+                    <value_type>1</value_type>
+                    <defineValues>
+                        <defineValue>
+                            <value>List 1</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>List 2</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>List 3</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>List 4</value>
+                        </defineValue>
+                    </defineValues>                    
+                </field>
+                <field>
+                    <name>Checkbox</name>
+                    <displayType>checkbox</displayType>    
+                    <value_type>1</value_type>
+                    <defineValues>
+                        <defineValue>
+                            <value>Checkbox 1</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>Checkbox 2</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>Checkbox 3</value>
+                        </defineValue>
+                        <defineValue>
+                            <value>Checkbox 4</value>
+                        </defineValue>
+                    </defineValues>                       
+                </field>                		
+            </fields>
+        </group>
+    </data>
+</config>
