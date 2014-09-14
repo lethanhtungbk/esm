@@ -29,12 +29,11 @@ class PageFactory {
     public static $angularScripts = array(
         PageType::PAGE_FIELDS => array(
             'scripts/service/field-service.js',
-            'scripts/controller/field-table.js'
+            'scripts/controller/field-table.js',
+            'scripts/directive/field-table.js'
         ),
         PageType::PAGE_FIELD_ADD => array(
             'scripts/service/field-service.js',
-            'scripts/controller/fields.js',
-            
             
             'scripts/service/group-service.js',
             'scripts/controller/field-form.js',
@@ -42,7 +41,6 @@ class PageFactory {
         ),
         PageType::PAGE_FIELD_EDIT => array(
             'scripts/service/field-service.js',
-            'scripts/controller/fields.js',
             
             'scripts/service/group-service.js',
             'scripts/controller/field-form.js',
@@ -51,36 +49,52 @@ class PageFactory {
         ),
         PageType::PAGE_GROUPS => array(
             'scripts/service/group-service.js',
-            'scripts/controller/groups.js',
-            
+            'scripts/controller/group-table.js',
+            'scripts/directive/group-table.js',            
         ),
+        
         PageType::PAGE_GROUP_ADD => array(
             'scripts/service/group-service.js',
-            'scripts/controller/groups.js'
+            'scripts/controller/group-form.js',
+            'scripts/directive/group-form.js'
         ),
         PageType::PAGE_GROUP_EDIT => array(
             'scripts/service/group-service.js',
-            'scripts/controller/groups.js'
+            'scripts/controller/group-form.js',
+            'scripts/directive/group-form.js'
         ),
         PageType::PAGE_GROUP_ASSIGN => array(
             'scripts/service/group-service.js',
+            'scripts/controller/group-assign.js',
+            'scripts/directive/group-assign.js',
+            
+            
             'scripts/service/field-service.js',
-            'scripts/controller/groups.js',
             'scripts/controller/field-form.js',
             'scripts/directive/field-form.js',
         ),
         PageType::PAGE_ENTITIES => array(
             'scripts/service/entity-service.js',
-            'scripts/controller/entities.js'
+            'scripts/controller/entity-table.js',
+            'scripts/directive/entity-table.js'
         ),
         PageType::PAGE_ENTITY_ADD => array(
             'scripts/service/entity-service.js',
-            'scripts/controller/entities.js',
-            'scripts/directive/image-upload.js',
+            'scripts/controller/entity-form.js',
+            'scripts/directive/entity-form.js',
+            
+            
+            'scripts/library/jquery.fileupload.js',            
+            'scripts/library/jquery.fileupload-process.js',            
+            'scripts/library/jquery.fileupload-validate.js',            
+            'scripts/directive/file-upload.js',
         ),
         PageType::PAGE_ENTITY_EDIT => array(            
             'scripts/service/entity-service.js',
-            'scripts/controller/entities.js',            
+            'scripts/controller/entity-form.js',
+            'scripts/directive/entity-form.js',
+            
+            
             'scripts/library/jquery.fileupload.js',            
             'scripts/library/jquery.fileupload-process.js',            
             'scripts/library/jquery.fileupload-validate.js',            
